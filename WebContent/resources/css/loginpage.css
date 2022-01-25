@@ -1,0 +1,216 @@
+@CHARSET "ISO-8859-1";
+body.login {
+    background: #eee url('../img/slider3.jpg') no-repeat 50%;
+    background-size: cover
+}
+
+#login {
+    background: rgba(17,17,17,0.7);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 100%;
+    width: 80%;
+    height: 100%;
+    padding-top: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+@media (min-width:768px) {
+    #login {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 45%;
+        margin: auto 0 auto auto;
+    }
+}
+
+#login h1 {
+    margin: 0
+}
+
+    #login h1 a {
+        display: inline-block;
+        height: 100px;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto 25px;
+        background-image: url('../images/login-logo.png');
+        -webkit-background-size: contain;
+        background-size: contain;
+        background-position: 50%;
+        vertical-align: middle
+    }
+
+@media (min-width:768px) {
+    #login h1 a {
+        height: 200px
+    }
+}
+
+#loginform, #login #lostpasswordform {
+    max-width: 375px;
+    padding: 15px 0;
+    margin: 0 auto !important;
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+    #loginform p, #login #lostpasswordform p {
+        margin-bottom: 0
+    }
+
+    #loginform label, #login #lostpasswordform label {
+        color: #95979c;
+        width: 100%;
+        font-size: 15px
+    }
+
+    #loginform .forgetmenot, #login #lostpasswordform .forgetmenot {
+        margin-bottom: 10px;
+        font-weight: normal;
+        float: none
+    }
+
+        #loginform .forgetmenot label, #login #lostpasswordform .forgetmenot label {
+            line-height: 28px
+        }
+
+        #loginform .forgetmenot #rememberme, #login #lostpasswordform .forgetmenot #rememberme {
+            margin: 0 2px 2px 0
+        }
+
+            #loginform .forgetmenot #rememberme:focus, #login #lostpasswordform .forgetmenot #rememberme:focus {
+                outline: none
+            }
+
+    #loginform input[type="text"], #login #lostpasswordform input[type="text"], #loginform input[type="password"], #login #lostpasswordform input[type="password"] {
+        height: auto;
+        margin: 0px 0px 0px 0;
+        padding: 16px 15px;
+        font-size: 15px
+    }
+
+    #loginform #user_login, #login #lostpasswordform #user_login {
+        margin-bottom: 5px
+    }
+
+    #loginform #user_pass, #login #lostpasswordform #user_pass {
+        margin-bottom: 12px
+    }
+
+    #loginform p.submit, #login #lostpasswordform p.submit {
+        text-align: center
+    }
+
+        #loginform p.submit input[type="submit"], #login #lostpasswordform p.submit input[type="submit"] {
+            float: none;
+            width: 100%;
+            height: auto;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            line-height: 1.6;
+            border-radius: 3px;
+            color: #ffffff;
+            background-color: #6dc234;
+            border-color: #6dc234
+        }
+
+            #loginform p.submit input[type="submit"]:hover, #login #lostpasswordform p.submit input[type="submit"]:hover, #loginform p.submit input[type="submit"]:focus, #login #lostpasswordform p.submit input[type="submit"]:focus, #loginform p.submit input[type="submit"]:active, #login #lostpasswordform p.submit input[type="submit"]:active, #loginform p.submit input[type="submit"].active, #login #lostpasswordform p.submit input[type="submit"].active, .open > .dropdown-toggle#loginform p.submit input[type="submit"], .open > .dropdown-toggle#login #lostpasswordform p.submit input[type="submit"] {
+                color: #ffffff;
+                background-color: #569a29;
+                border-color: #529227
+            }
+
+            #loginform p.submit input[type="submit"]:active, #login #lostpasswordform p.submit input[type="submit"]:active, #loginform p.submit input[type="submit"].active, #login #lostpasswordform p.submit input[type="submit"].active, .open > .dropdown-toggle#loginform p.submit input[type="submit"], .open > .dropdown-toggle#login #lostpasswordform p.submit input[type="submit"] {
+                background-image: none
+            }
+
+            #loginform p.submit input[type="submit"].disabled, #login #lostpasswordform p.submit input[type="submit"].disabled, #loginform p.submit input[type="submit"][disabled], #login #lostpasswordform p.submit input[type="submit"][disabled], fieldset[disabled] #loginform p.submit input[type="submit"], fieldset[disabled] #login #lostpasswordform p.submit input[type="submit"], #loginform p.submit input[type="submit"].disabled:hover, #login #lostpasswordform p.submit input[type="submit"].disabled:hover, #loginform p.submit input[type="submit"][disabled]:hover, #login #lostpasswordform p.submit input[type="submit"][disabled]:hover, fieldset[disabled] #loginform p.submit input[type="submit"]:hover, fieldset[disabled] #login #lostpasswordform p.submit input[type="submit"]:hover, #loginform p.submit input[type="submit"].disabled:focus, #login #lostpasswordform p.submit input[type="submit"].disabled:focus, #loginform p.submit input[type="submit"][disabled]:focus, #login #lostpasswordform p.submit input[type="submit"][disabled]:focus, fieldset[disabled] #loginform p.submit input[type="submit"]:focus, fieldset[disabled] #login #lostpasswordform p.submit input[type="submit"]:focus, #loginform p.submit input[type="submit"].disabled:active, #login #lostpasswordform p.submit input[type="submit"].disabled:active, #loginform p.submit input[type="submit"][disabled]:active, #login #lostpasswordform p.submit input[type="submit"][disabled]:active, fieldset[disabled] #loginform p.submit input[type="submit"]:active, fieldset[disabled] #login #lostpasswordform p.submit input[type="submit"]:active, #loginform p.submit input[type="submit"].disabled.active, #login #lostpasswordform p.submit input[type="submit"].disabled.active, #loginform p.submit input[type="submit"][disabled].active, #login #lostpasswordform p.submit input[type="submit"][disabled].active, fieldset[disabled] #loginform p.submit input[type="submit"].active, fieldset[disabled] #login #lostpasswordform p.submit input[type="submit"].active {
+                background-color: #6dc234;
+                border-color: #6dc234
+            }
+
+            #loginform p.submit input[type="submit"] .badge, #login #lostpasswordform p.submit input[type="submit"] .badge {
+                color: #6dc234;
+                background-color: #ffffff
+            }
+
+#login #nav, #login #backtoblog {
+    max-width: 330px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0
+}
+
+    #login #nav a, #login #backtoblog a {
+        color: #95979c
+    }
+
+        #login #nav a:hover, #login #backtoblog a:hover {
+            color: #e9eaeb
+        }
+
+#login #nav {
+    margin-top: 10px
+}
+
+@media (min-width:768px) {
+    #login #nav {
+        margin-top: 24px
+    }
+}
+
+#login .message, #login #login_error {
+    max-width: 450px;
+    margin: 1em auto;
+    font-weight: 400 !important;
+    border: none
+}
+
+.mobile #login {
+    padding: 20px
+}
+
+    .mobile #login h1 a {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+@media (min-width:992px) {
+    .col-fixed-content {
+        width: 634px
+    }
+
+    .col-fixed-sidebar {
+        width: 340px
+    }
+}
+
+@media (min-width:1300px) {
+    .col-fixed-content {
+        width: 900px;
+        margin-right: 40px
+    }
+
+    .col-fixed-sidebar {
+        width: 340px
+    }
+}
+
+
+.cover body {
+    height: 100%;
+    vertical-align: top;
+}
+
+.cover {
+    height: 100%;
+    margin-top: 0 !important;
+}

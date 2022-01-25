@@ -1,0 +1,965 @@
+
+@font-face {
+  font-family: 'socicon';
+  src:  url('../fonts/socicon.eot');
+  src:  url('../fonts/socicon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/socicon.woff2') format('woff2'),
+    url('../fonts/socicon.ttf') format('truetype'),
+    url('../fonts/socicon.woff') format('woff'),
+    url('../fonts/socicon.svg#Socicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.socialsider { z-index:10; font-size:12px; line-height:22px; width:70px; display:block; -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-ms-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.socialsider ul { list-style-type:none; margin:0; padding:0; font-size:12px; line-height:22px; display:block;}
+.socialsider li { margin:0; padding:0; font-size:12px; line-height:22px;  display:block;}
+.socialsider a { height:41px;display:block; text-decoration:none; -webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease; position:relative; font-size:12px; line-height:22px; }
+.socialsider a::after { display:block; font-family:'socicon'; text-decoration:none; font-size:20px; line-height:22px; padding:10px; position:absolute;left:0;top:0;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease; }
+
+.socialsider_fixed { position:fixed; }
+.socialsider_absolute { position:absolute; }
+
+/* Disable on mobile */
+@media (max-width:640px) { .socialsider_mobiledisable { display:none; }}
+
+/* Effects */
+.socialsider_radius a::after { border-radius:5px; }
+.socialsider_shadow a::after { -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);box-shadow: 0 0 2px 2px rgba(0,0,0,0.2); }
+.socialsider_opacity a::after { opacity:0.4; }
+.socialsider_opacity a:hover::after { opacity:1; }
+.socialsider_spacer a { height:42px; margin-bottom:1px; }
+.socialsider_blur:hover a:not(:hover) { filter:blur(2px); -webkit-filter:blur(2px); }
+
+/* Positions */
+.socialsider_left_top { left:-30px; top:50px; }
+.socialsider_left_top.socialsider_hidden { left:-45px; transform:translate3d(0,0,0); }
+.socialsider_left_top.socialsider_hidden:hover { transform:translate3d(20px,0,0); }
+.socialsider_left_top a{ left:0px;}
+.socialsider_left_top a::after { padding-left:40px; transform:translate3d(0,0,0); }
+.socialsider_left_top a:hover { transform:translate3d(10px,0,0); }
+
+.socialsider_left_middle { left:-30px; top:40%; }
+.socialsider_left_middle.socialsider_hidden { left:-45px; transform:translate3d(0,0,0); }
+.socialsider_left_middle.socialsider_hidden:hover { transform:translate3d(20px,0,0); }
+.socialsider_left_middle a { left:0px;}
+.socialsider_left_middle a::after { padding-left:40px; transform:translate3d(0,0,0); }
+.socialsider_left_middle a:hover { transform:translate3d(10px,0,0); }
+
+.socialsider_left_bottom { left:-30px; bottom:50px; }
+.socialsider_left_bottom.socialsider_hidden { left:-45px; transform:translate3d(0,0,0); }
+.socialsider_left_bottom.socialsider_hidden:hover { transform:translate3d(20px,0,0); }
+.socialsider_left_bottom a { left:0px;}
+.socialsider_left_bottom a::after { padding-left:40px; transform:translate3d(0,0,0); }
+.socialsider_left_bottom a:hover { transform:translate3d(10px,0,0); }
+
+.socialsider_right_top { right:-30px; top:50px; }
+.socialsider_right_top.socialsider_hidden { right:-45px; transform:translate3d(0,0,0); }
+.socialsider_right_top.socialsider_hidden:hover { transform:translate3d(-20px,0,0); }
+.socialsider_right_top a { right:0px;}
+.socialsider_right_top a::after { padding-right:40px; transform:translate3d(0,0,0); }
+.socialsider_right_top a:hover { transform:translate3d(-10px,0,0); }
+
+.socialsider_right_middle { right:-30px; top:40%; }
+.socialsider_right_middle.socialsider_hidden { right:-45px; transform:translate3d(0,0,0); }
+.socialsider_right_middle.socialsider_hidden:hover { transform:translate3d(-20px,0,0); }
+.socialsider_right_middle a { right:0px;}
+.socialsider_right_middle a::after { padding-right:40px; transform:translate3d(0,0,0); }
+.socialsider_right_middle a:hover { transform:translate3d(-10px,0,0); }
+
+.socialsider_right_bottom { right:-30px; bottom:50px; }
+.socialsider_right_bottom.socialsider_hidden { right:-45px; transform:translate3d(0,0,0); }
+.socialsider_right_bottom.socialsider_hidden:hover { transform:translate3d(-20px,0,0); }
+.socialsider_right_bottom a { right:0px;}
+.socialsider_right_bottom a::after { padding-right:40px; transform:translate3d(0,0,0);}
+.socialsider_right_bottom a:hover { transform:translate3d(-10px,0,0); }
+
+
+
+/* Socicon letters */
+.socialsider a[data-socialsider='twitter']::after { content:"\e08d";}
+.socialsider a[data-socialsider='facebook']::after { content:"\e028";}
+.socialsider a[data-socialsider='google']::after { content:"\e034";}
+.socialsider a[data-socialsider='pinterest']::after { content:"\e063";}
+.socialsider a[data-socialsider='foursquare']::after { content:"\e030";}
+.socialsider a[data-socialsider='yahoo']::after { content:"\e0a0";}
+.socialsider a[data-socialsider='skype']::after { content:"\e073";}
+.socialsider a[data-socialsider='yelp']::after { content:"\e0a3";}
+.socialsider a[data-socialsider='feedburner']::after { content:"\e029";}
+.socialsider a[data-socialsider='linkedin']::after { content:"\e04c";}
+.socialsider a[data-socialsider='viadeo']::after { content:"\e090";}
+.socialsider a[data-socialsider='xing']::after { content:"\e09f";}
+.socialsider a[data-socialsider='myspace']::after { content:"\e056";}
+.socialsider a[data-socialsider='soundcloud']::after { content:"\e078";}
+.socialsider a[data-socialsider='spotify']::after { content:"\e079";}
+.socialsider a[data-socialsider='grooveshark']::after { content:"\e039";}
+.socialsider a[data-socialsider='lastfm']::after { content:"\e04a";}
+.socialsider a[data-socialsider='youtube']::after { content:"\e0a5";}
+.socialsider a[data-socialsider='vimeo']::after { content:"\e093";}
+.socialsider a[data-socialsider='dailymotion']::after { content:"\e017";}
+.socialsider a[data-socialsider='vine']::after { content:"\e094";}
+.socialsider a[data-socialsider='flickr']::after { content:"\e02d";}
+.socialsider a[data-socialsider='500px']::after { content:"\e000";}
+.socialsider a[data-socialsider='instagram']::after { content:"\e044";}
+.socialsider a[data-socialsider='wordpress']::after { content:"\e09c";}
+.socialsider a[data-socialsider='tumblr']::after { content:"\e08b";}
+.socialsider a[data-socialsider='blogger']::after { content:"\e012";}
+.socialsider a[data-socialsider='technorati']::after { content:"\e086";}
+.socialsider a[data-socialsider='reddit']::after { content:"\e06c";}
+.socialsider a[data-socialsider='dribbble']::after { content:"\e021";}
+.socialsider a[data-socialsider='stumbleupon']::after { content:"\e082";}
+.socialsider a[data-socialsider='digg']::after { content:"\e01c\e01c";}
+.socialsider a[data-socialsider='envato']::after { content:"\e026";}
+.socialsider a[data-socialsider='behance']::after { content:"\e010";}
+.socialsider a[data-socialsider='delicious']::after { content:"\e019";}
+.socialsider a[data-socialsider='deviantart']::after { content:"\e01a";}
+.socialsider a[data-socialsider='forrst']::after { content:"\e02f";}
+.socialsider a[data-socialsider='play']::after { content:"\e064";}
+.socialsider a[data-socialsider='zerply']::after { content:"\e0a7";}
+.socialsider a[data-socialsider='wikipedia']::after { content:"\e09a";}
+.socialsider a[data-socialsider='apple']::after { content:"\e008";}
+.socialsider a[data-socialsider='flattr']::after { content:"\e02c";}
+.socialsider a[data-socialsider='github']::after { content:"\e032";}
+.socialsider a[data-socialsider='friendfeed']::after { content:"\e031";}
+.socialsider a[data-socialsider='newsvine']::after { content:"\e057";}
+.socialsider a[data-socialsider='identica']::after { content:"\e042";}
+.socialsider a[data-socialsider='bebo']::after { content:"\e00f";}
+.socialsider a[data-socialsider='zynga']::after { content:"\e0a9";}
+.socialsider a[data-socialsider='steam']::after { content:"\e07e";}
+.socialsider a[data-socialsider='xbox']::after { content:"\e09e";}
+.socialsider a[data-socialsider='windows']::after { content:"\e09b";}
+.socialsider a[data-socialsider='outlook']::after { content:"\e05d";}
+.socialsider a[data-socialsider='coderwall']::after { content:"\e015";}
+.socialsider a[data-socialsider='tripadvisor']::after { content:"\e088";}
+.socialsider a[data-socialsider='lanyrd']::after { content:"\e049";}
+.socialsider a[data-socialsider='slideshare']::after { content:"\e074";}
+.socialsider a[data-socialsider='buffer']::after { content:"\e013";}
+.socialsider a[data-socialsider='rss']::after { content: "\e071";}
+.socialsider a[data-socialsider='vkontakte']::after { content:"\e095";}
+.socialsider a[data-socialsider='disqus']::after { content:"\e01e";}
+
+/* v1.2 */
+.socialsider a[data-socialsider='8tracks']::after { content:"\e001";}
+.socialsider a[data-socialsider='airbnb']::after { content:"\e002";}
+.socialsider a[data-socialsider='alliance']::after { content:"\e003";}
+.socialsider a[data-socialsider='amazon']::after { content: "\e004";}
+.socialsider a[data-socialsider='amplement']::after { content: "\e005";}
+.socialsider a[data-socialsider='android']::after { content: "\e006";}
+.socialsider a[data-socialsider='angellist']::after { content: "\e007";}
+.socialsider a[data-socialsider='appnet']::after { content: "\e009";}
+.socialsider a[data-socialsider='baidu']::after { content: "\e00a";}
+.socialsider a[data-socialsider='bandcamp']::after { content: "\e00b";}
+.socialsider a[data-socialsider='battlenet']::after { content: "\e00c";}
+.socialsider a[data-socialsider='bebee']::after { content: "\e00e";}
+.socialsider a[data-socialsider='blizzard']::after { content: "\e011";}
+.socialsider a[data-socialsider='chrome']::after { content: "\e014";}
+.socialsider a[data-socialsider='curse']::after { content: "\e016";}
+.socialsider a[data-socialsider='deezer']::after { content: "\e018";}
+.socialsider a[data-socialsider='diablo']::after { content: "\e01b";}
+.socialsider a[data-socialsider='discord']::after { content: "\e01d";}
+.socialsider a[data-socialsider='douban']::after { content: "\e01f";}
+.socialsider a[data-socialsider='draugiem']::after { content: "\e020";}
+.socialsider a[data-socialsider='drupal']::after { content: "\e022";}
+.socialsider a[data-socialsider='ebay']::after { content: "\e023";}
+.socialsider a[data-socialsider='ello']::after { content: "\e024";}
+.socialsider a[data-socialsider='endomondo']::after { content: "\e025";}
+.socialsider a[data-socialsider='etsy']::after { content: "\e027";}
+.socialsider a[data-socialsider='filmweb']::after { content: "\e02a";}
+.socialsider a[data-socialsider='firefox']::after { content: "\e02b";}
+.socialsider a[data-socialsider='formulr']::after { content: "\e02e";}
+.socialsider a[data-socialsider='goodreads']::after { content: "\e033";}
+.socialsider a[data-socialsider='googlescholar']::after { content: "\e035";}
+.socialsider a[data-socialsider='googlegroups']::after { content: "\e036";}
+.socialsider a[data-socialsider='googlephotos']::after { content: "\e037";}
+.socialsider a[data-socialsider='googleplus']::after { content: "\e038";}
+.socialsider a[data-socialsider='hackerrank']::after { content: "\e03a";}
+.socialsider a[data-socialsider='hearthstone']::after { content: "\e03b";}
+.socialsider a[data-socialsider='hellocoton']::after { content: "\e03c";}
+.socialsider a[data-socialsider='heroes']::after { content: "\e03d";}
+.socialsider a[data-socialsider='hitbox']::after { content: "\e03e";}
+.socialsider a[data-socialsider='horde']::after { content: "\e03f";}
+.socialsider a[data-socialsider='houzz']::after { content: "\e040";}
+.socialsider a[data-socialsider='icq']::after { content: "\e041";}
+.socialsider a[data-socialsider='imdb']::after { content: "\e043";}
+.socialsider a[data-socialsider='issuu']::after { content: "\e045";}
+.socialsider a[data-socialsider='istock']::after { content: "\e046";}
+.socialsider a[data-socialsider='itunes']::after { content: "\e047";}
+.socialsider a[data-socialsider='keybase']::after { content: "\e048";}
+.socialsider a[data-socialsider='line']::after { content: "\e04b";}
+.socialsider a[data-socialsider='livejournal']::after { content: "\e04d";}
+.socialsider a[data-socialsider='lyft']::after { content: "\e04e";}
+.socialsider a[data-socialsider='macos']::after { content: "\e04f";}
+.socialsider a[data-socialsider='mail']::after { content: "\e050";}
+.socialsider a[data-socialsider='medium']::after { content: "\e051";}
+.socialsider a[data-socialsider='meetup']::after { content: "\e052";}
+.socialsider a[data-socialsider='mixcloud']::after { content: "\e053";}
+.socialsider a[data-socialsider='modelmayhem']::after { content: "\e054";}
+.socialsider a[data-socialsider='mumble']::after { content: "\e055";}
+.socialsider a[data-socialsider='nintendo']::after { content: "\e058";}
+.socialsider a[data-socialsider='npm']::after { content: "\e059";}
+.socialsider a[data-socialsider='odnoklassniki']::after { content: "\e05a";}
+.socialsider a[data-socialsider='openid']::after { content: "\e05b";}
+.socialsider a[data-socialsider='opera']::after { content: "\e05c";}
+.socialsider a[data-socialsider='overwatch']::after { content: "\e05e";}
+.socialsider a[data-socialsider='patreon']::after { content: "\e05f";}
+.socialsider a[data-socialsider='paypal']::after { content: "\e060";}
+.socialsider a[data-socialsider='periscope']::after { content: "\e061";}
+.socialsider a[data-socialsider='persona']::after { content: "\e062";}
+.socialsider a[data-socialsider='player']::after { content: "\e065";}
+.socialsider a[data-socialsider='playstation']::after { content: "\e066";}
+.socialsider a[data-socialsider='pocket']::after { content: "\e067";}
+.socialsider a[data-socialsider='qq']::after { content: "\e068";}
+.socialsider a[data-socialsider='quora']::after { content: "\e069";}
+.socialsider a[data-socialsider='raidcall']::after { content: "\e06a";}
+.socialsider a[data-socialsider='ravelry']::after { content: "\e06b";}
+.socialsider a[data-socialsider='renren']::after { content: "\e06d";}
+.socialsider a[data-socialsider='researchgate']::after { content: "\e06e";}
+.socialsider a[data-socialsider='residentadvisor']::after { content: "\e06f";}
+.socialsider a[data-socialsider='reverbnation']::after { content: "\e070";}
+.socialsider a[data-socialsider='sharethis']::after { content: "\e072";}
+.socialsider a[data-socialsider='smugmug']::after { content: "\e075";}
+.socialsider a[data-socialsider='snapchat']::after { content: "\e076";}
+.socialsider a[data-socialsider='songkick']::after { content: "\e077";}
+.socialsider a[data-socialsider='stackexchange']::after { content: "\e07a";}
+.socialsider a[data-socialsider='stackoverflow']::after { content: "\e07b";}
+.socialsider a[data-socialsider='starcraft']::after { content: "\e07c";}
+.socialsider a[data-socialsider='stayfriends']::after { content: "\e07d";}
+.socialsider a[data-socialsider='storehouse']::after { content: "\e07f";}
+.socialsider a[data-socialsider='strava']::after { content: "\e080";}
+.socialsider a[data-socialsider='streamjar']::after { content: "\e081";}
+.socialsider a[data-socialsider='swarm']::after { content: "\e083";}
+.socialsider a[data-socialsider='teamspeak']::after { content: "\e084";}
+.socialsider a[data-socialsider='teamviewer']::after { content: "\e085";}
+.socialsider a[data-socialsider='telegram']::after { content: "\e087";}
+.socialsider a[data-socialsider='tripit']::after { content: "\e089";}
+.socialsider a[data-socialsider='triplej']::after { content: "\e08a";}
+.socialsider a[data-socialsider='twitch']::after { content: "\e08c";}
+.socialsider a[data-socialsider='uber']::after { content: "\e08e";}
+.socialsider a[data-socialsider='ventrilo']::after { content: "\e08f";}
+.socialsider a[data-socialsider='viber']::after { content: "\e091";}
+.socialsider a[data-socialsider='viewbug']::after { content: "\e092";}
+.socialsider a[data-socialsider='warcraft']::after { content: "\e096";}
+.socialsider a[data-socialsider='wechat']::after { content: "\e097";}
+.socialsider a[data-socialsider='weibo']::after { content: "\e098";}
+.socialsider a[data-socialsider='whatsapp']::after { content: "\e099";}
+.socialsider a[data-socialsider='wykop']::after { content: "\e09d";}
+.socialsider a[data-socialsider='yammer']::after { content: "\e0a1";}
+.socialsider a[data-socialsider='yandex']::after { content: "\e0a2";}
+.socialsider a[data-socialsider='younow']::after { content: "\e0a4";}
+.socialsider a[data-socialsider='zapier']::after { content: "\e0a6";}
+.socialsider a[data-socialsider='zomato']::after { content: "\e0a8";}
+
+
+/* Colors */
+
+/* Dark background, white font */
+.socialsider.socialsider_bgdark_white a::after { background:#333; color:#FFF;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='twitter']:hover::after { background:#4da7de;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='facebook']:hover::after { background:#3e5b98;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='google']:hover::after { background:#d93e2d;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='pinterest']:hover::after { background:#c92619;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='foursquare']:hover::after { background:#23b7e0;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='yahoo']:hover::after { background:#6E2A85;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='skype']:hover::after { background:#28abe3;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='yelp']:hover::after { background:#c83218;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='feedburner']:hover::after { background:#FFCC00;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='linkedin']:hover::after { background:#3371b7;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='viadeo']:hover::after { background:#e4a000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='xing']:hover::after { background:#005a60;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='myspace']:hover::after { background:#323232;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='soundcloud']:hover::after { background:#fe3801;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='spotify']:hover::after { background:#7bb342;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='grooveshark']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='lastfm']:hover::after { background:#d41316;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='youtube']:hover::after { background:#e02a20;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='vimeo']:hover::after { background:#51b5e7;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='dailymotion']:hover::after { background:#004e72;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='vine']:hover::after { background:#00b389;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='flickr']:hover::after { background:#1e1e1b;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='500px']:hover::after { background:#58a9de;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='instagram']:hover::after { background:#9c7c6e;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='wordpress']:hover::after { background:#464646;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='tumblr']:hover::after { background:#45556c;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='blogger']:hover::after { background:#ec661c;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='technorati']:hover::after { background:#5cb030;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='reddit']:hover::after { background:#e74a1e;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='dribbble']:hover::after { background:#e84d88;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='stumbleupon']:hover::after { background:#e64011;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='digg']:hover::after { background:#1d1d1b;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='envato']:hover::after { background:#597c3a;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='behance']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='delicious']:hover::after { background:#020202;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='deviantart']:hover::after { background:#c5d200;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='forrst']:hover::after { background:#5B9A68;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='play']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='zerply']:hover::after { background:#9DBC7A;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='wikipedia']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='apple']:hover::after { background:#B9BFC1;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='flattr']:hover::after { background:#F67C1A;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='github']:hover::after { background:#5380c0;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='chimein']:hover::after { background:#888688;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='friendfeed']:hover::after { background:#2F72C4;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='newsvine']:hover::after { background:#075B2F;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='identica']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='bebo']:hover::after { background:#EF1011;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='zynga']:hover::after { background:#DC0606;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='steam']:hover::after { background:#8F8D8A;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='xbox']:hover::after { background:#92C83E;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='windows']:hover::after { background:#00BDF6;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='outlook']:hover::after { background:#0072C6;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='coderwall']:hover::after { background:#3E8DCC;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='tripadvisor']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='netcodes']:hover::after { background:#2E3436;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='easid']:hover::after { background:#1ABC9C;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='lanyrd']:hover::after { background:#3c80c9;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='slideshare']:hover::after { background:#4ba3a6;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='buffer']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='rss']:hover::after { background: #f26109;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='vkontakte']:hover::after { background:#5a7fa6;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='disqus']:hover::after { background:#2e9fff;}
+
+/* v1.2*/
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='8tracks']:hover::after { background:#122c4b;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='airbnb']:hover::after { background:#ff5a5f;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='alliance']:hover::after { background:#144587;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='amazon']:hover::after { background:#ff9900;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='amplement']:hover::after { background:#0996c3;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='android']:hover::after { background:#8ec047;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='angellist']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='appnet']:hover::after { background:#494949;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='baidu']:hover::after { background:#2629d9;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='bandcamp']:hover::after { background:#619aa9;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='battlenet']:hover::after { background:#0096CD;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='bebee']:hover::after { background:#f28f16;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='blizzard']:hover::after { background:#01B2F1;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='chrome']:hover::after { background:#757575;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='curse']:hover::after { background:#f26522;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='deezer']:hover::after { background:#32323d;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='diablo']:hover::after { background:#8B1209;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='discord']:hover::after { background:#7289da;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='douban']:hover::after { background:#3ca353;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='draugiem']:hover::after { background:#ffa32b;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='drupal']:hover::after { background:#00598e;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='ebay']:hover::after { background:#333333;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='ello']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='endomondo']:hover::after { background:#86ad00;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='etsy']:hover::after { background:#F56400;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='filmweb']:hover::after { background:#ffc404;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='firefox']:hover::after { background:#484848;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='formulr']:hover::after { background:#ff5a60;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='goodreads']:hover::after { background:#463020;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='googlescholar']:hover::after { background:#4285f4;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='googlegroups']:hover::after { background:#4F8EF5;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='googlephotos']:hover::after { background:#212121;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='googleplus']:hover::after { background:#dd4b39;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='hackerrank']:hover::after { background:#2ec866;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='hearthstone']:hover::after { background:#EC9313;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='hellocoton']:hover::after { background:#d30d66;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='heroes']:hover::after { background:#2397F7;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='hitbox']:hover::after { background:#99CC00;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='horde']:hover::after { background:#84121C;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='houzz']:hover::after { background:#7CC04B;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='icq']:hover::after { background:#7EBD00;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='imdb']:hover::after { background:#E8BA00;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='issuu']:hover::after { background:#F26F61;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='istock']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='itunes']:hover::after { background:#ff5e51;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='keybase']:hover::after { background:#FF7100;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='line']:hover::after { background:#00B901;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='livejournal']:hover::after { background:#0099CC;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='lyft']:hover::after { background:#FF00BF;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='macos']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='mail']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='medium']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='meetup']:hover::after { background:#e2373c;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='mixcloud']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='modelmayhem']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='mumble']:hover::after { background:#5AB5D1;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='nintendo']:hover::after { background:#F58A33;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='npm']:hover::after { background:#C12127;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='odnoklassniki']:hover::after { background:#f48420;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='openid']:hover::after { background:#f78c40;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='opera']:hover::after { background:#FF1B2D;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='overwatch']:hover::after { background:#9E9E9E;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='patreon']:hover::after { background:#E44727;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='paypal']:hover::after { background:#009cde;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='periscope']:hover::after { background:#3AA4C6;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='persona']:hover::after { background:#e6753d;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='player']:hover::after { background:#6E41BD;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='playstation']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='pocket']:hover::after { background:#ED4055;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='qq']:hover::after { background:#4297d3;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='quora']:hover::after { background:#cb202d;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='raidcall']:hover::after { background:#073558;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='ravelry']:hover::after { background:#B6014C;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='renren']:hover::after { background:#2266b0;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='researchgate']:hover::after { background:#00CCBB;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='residentadvisor']:hover::after { background:#B3BE1B;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='reverbnation']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='sharethis']:hover::after { background:#01bf01;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='smugmug']:hover::after { background:#ACFD32;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='snapchat']:hover::after { background:#fffa37;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='songkick']:hover::after { background:#F80046;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='stackexchange']:hover::after { background:#2f2f2f;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='stackoverflow']:hover::after { background:#FD9827;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='starcraft']:hover::after { background:#002250;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='stayfriends']:hover::after { background:#F08A1C;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='storehouse']:hover::after { background:#25B0E6;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='strava']:hover::after { background:#FC4C02;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='streamjar']:hover::after { background:#503a60;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='swarm']:hover::after { background:#FC9D3C;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='teamspeak']:hover::after { background:#465674;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='teamviewer']:hover::after { background:#168EF4;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='telegram']:hover::after { background:#0088cc;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='tripit']:hover::after { background:#1982C3;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='triplej']:hover::after { background:#E53531;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='twitch']:hover::after { background:#6441a5;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='uber']:hover::after { background:#000000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='ventrilo']:hover::after { background:#77808A;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='viber']:hover::after { background:#7b519d;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='viewbug']:hover::after { background:#2B9FCF;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='warcraft']:hover::after { background:#1EB10A;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='wechat']:hover::after { background:#09b507;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='weibo']:hover::after { background:#e31c34;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='whatsapp']:hover::after { background:#20B038;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='wykop']:hover::after { background:#328efe;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='yammer']:hover::after { background:#1175C4;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='yandex']:hover::after { background:#FF0000;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='younow']:hover::after { background:#61C03E;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='zapier']:hover::after { background:#FF4A00;}
+.socialsider.socialsider_bgdark_white.socialsider_colorize a[data-socialsider='zomato']:hover::after { background:#cb202d;}
+
+
+/* White background, dark font */
+.socialsider.socialsider_bgwhite_dark a::after { background:#FFF; color:#333;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='twitter']:hover::after { color:#4da7de;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='facebook']:hover::after { color:#3e5b98;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='google']:hover::after { color:#d93e2d;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='pinterest']:hover::after { color:#c92619;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='foursquare']:hover::after { color:#23b7e0;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='yahoo']:hover::after { color:#6E2A85;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='skype']:hover::after { color:#28abe3;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='yelp']:hover::after { color:#c83218;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='feedburner']:hover::after { color:#FFCC00;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='linkedin']:hover::after { color:#3371b7;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='viadeo']:hover::after { color:#e4a000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='xing']:hover::after { color:#005a60;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='myspace']:hover::after { color:#323232;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='soundcloud']:hover::after { color:#fe3801;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='spotify']:hover::after { color:#7bb342;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='grooveshark']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='lastfm']:hover::after { color:#d41316;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='youtube']:hover::after { color:#e02a20;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='vimeo']:hover::after { color:#51b5e7;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='dailymotion']:hover::after { color:#004e72;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='vine']:hover::after { color:#00b389;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='flickr']:hover::after { color:#1e1e1b;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='500px']:hover::after { color:#58a9de;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='instagram']:hover::after { color:#9c7c6e;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='wordpress']:hover::after { color:#464646;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='tumblr']:hover::after { color:#45556c;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='blogger']:hover::after { color:#ec661c;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='technorati']:hover::after { color:#5cb030;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='reddit']:hover::after { color:#e74a1e;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='dribbble']:hover::after { color:#e84d88;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='stumbleupon']:hover::after { color:#e64011;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='digg']:hover::after { color:#1d1d1b;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='envato']:hover::after { color:#597c3a;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='behance']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='delicious']:hover::after { color:#020202;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='deviantart']:hover::after { color:#c5d200;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='forrst']:hover::after { color:#5B9A68;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='play']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='zerply']:hover::after { color:#9DBC7A;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='wikipedia']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='apple']:hover::after { color:#B9BFC1;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='flattr']:hover::after { color:#F67C1A;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='github']:hover::after { color:#5380c0;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='chimein']:hover::after { color:#888688;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='friendfeed']:hover::after { color:#2F72C4;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='newsvine']:hover::after { color:#075B2F;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='identica']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='bebo']:hover::after { color:#EF1011;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='zynga']:hover::after { color:#DC0606;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='steam']:hover::after { color:#8F8D8A;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='xbox']:hover::after { color:#92C83E;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='windows']:hover::after { color:#00BDF6;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='outlook']:hover::after { color:#0072C6;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='coderwall']:hover::after { color:#3E8DCC;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='tripadvisor']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='netcodes']:hover::after { color:#2E3436;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='easid']:hover::after { color:#1ABC9C;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='lanyrd']:hover::after { color:#3c80c9;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='slideshare']:hover::after { color:#4ba3a6;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='buffer']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='rss']:hover::after { color: #f26109;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='vkontakte']:hover::after { color:#5a7fa6;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='disqus']:hover::after { color:#2e9fff;}
+
+/* v1.2*/
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='8tracks']:hover::after { color:#122c4b;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='airbnb']:hover::after { color:#ff5a5f;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='alliance']:hover::after { color:#144587;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='amazon']:hover::after { color:#ff9900;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='amplement']:hover::after { color:#0996c3;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='android']:hover::after { color:#8ec047;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='angellist']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='appnet']:hover::after { color:#494949;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='baidu']:hover::after { color:#2629d9;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='bandcamp']:hover::after { color:#619aa9;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='battlenet']:hover::after { color:#0096CD;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='bebee']:hover::after { color:#f28f16;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='blizzard']:hover::after { color:#01B2F1;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='chrome']:hover::after { color:#757575;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='curse']:hover::after { color:#f26522;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='deezer']:hover::after { color:#32323d;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='diablo']:hover::after { color:#8B1209;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='discord']:hover::after { color:#7289da;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='douban']:hover::after { color:#3ca353;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='draugiem']:hover::after { color:#ffa32b;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='drupal']:hover::after { color:#00598e;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='ebay']:hover::after { color:#333333;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='ello']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='endomondo']:hover::after { color:#86ad00;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='etsy']:hover::after { color:#F56400;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='filmweb']:hover::after { color:#ffc404;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='firefox']:hover::after { color:#484848;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='formulr']:hover::after { color:#ff5a60;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='goodreads']:hover::after { color:#463020;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='googlescholar']:hover::after { color:#4285f4;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='googlegroups']:hover::after { color:#4F8EF5;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='googlephotos']:hover::after { color:#212121;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='googleplus']:hover::after { color:#dd4b39;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='hackerrank']:hover::after { color:#2ec866;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='hearthstone']:hover::after { color:#EC9313;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='hellocoton']:hover::after { color:#d30d66;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='heroes']:hover::after { color:#2397F7;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='hitbox']:hover::after { color:#99CC00;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='horde']:hover::after { color:#84121C;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='houzz']:hover::after { color:#7CC04B;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='icq']:hover::after { color:#7EBD00;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='imdb']:hover::after { color:#E8BA00;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='issuu']:hover::after { color:#F26F61;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='istock']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='itunes']:hover::after { color:#ff5e51;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='keybase']:hover::after { color:#FF7100;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='line']:hover::after { color:#00B901;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='livejournal']:hover::after { color:#0099CC;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='lyft']:hover::after { color:#FF00BF;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='macos']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='mail']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='medium']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='meetup']:hover::after { color:#e2373c;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='mixcloud']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='modelmayhem']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='mumble']:hover::after { color:#5AB5D1;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='nintendo']:hover::after { color:#F58A33;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='npm']:hover::after { color:#C12127;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='odnoklassniki']:hover::after { color:#f48420;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='openid']:hover::after { color:#f78c40;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='opera']:hover::after { color:#FF1B2D;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='overwatch']:hover::after { color:#9E9E9E;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='patreon']:hover::after { color:#E44727;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='paypal']:hover::after { color:#009cde;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='periscope']:hover::after { color:#3AA4C6;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='persona']:hover::after { color:#e6753d;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='player']:hover::after { color:#6E41BD;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='playstation']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='pocket']:hover::after { color:#ED4055;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='qq']:hover::after { color:#4297d3;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='quora']:hover::after { color:#cb202d;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='raidcall']:hover::after { color:#073558;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='ravelry']:hover::after { color:#B6014C;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='renren']:hover::after { color:#2266b0;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='researchgate']:hover::after { color:#00CCBB;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='residentadvisor']:hover::after { color:#B3BE1B;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='reverbnation']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='sharethis']:hover::after { color:#01bf01;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='smugmug']:hover::after { color:#ACFD32;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='snapchat']:hover::after { color:#fffa37;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='songkick']:hover::after { color:#F80046;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='stackexchange']:hover::after { color:#2f2f2f;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='stackoverflow']:hover::after { color:#FD9827;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='starcraft']:hover::after { color:#002250;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='stayfriends']:hover::after { color:#F08A1C;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='storehouse']:hover::after { color:#25B0E6;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='strava']:hover::after { color:#FC4C02;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='streamjar']:hover::after { color:#503a60;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='swarm']:hover::after { color:#FC9D3C;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='teamspeak']:hover::after { color:#465674;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='teamviewer']:hover::after { color:#168EF4;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='telegram']:hover::after { color:#0088cc;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='tripit']:hover::after { color:#1982C3;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='triplej']:hover::after { color:#E53531;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='twitch']:hover::after { color:#6441a5;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='uber']:hover::after { color:#000000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='ventrilo']:hover::after { color:#77808A;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='viber']:hover::after { color:#7b519d;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='viewbug']:hover::after { color:#2B9FCF;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='warcraft']:hover::after { color:#1EB10A;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='wechat']:hover::after { color:#09b507;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='weibo']:hover::after { color:#e31c34;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='whatsapp']:hover::after { color:#20B038;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='wykop']:hover::after { color:#328efe;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='yammer']:hover::after { color:#1175C4;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='yandex']:hover::after { color:#FF0000;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='younow']:hover::after { color:#61C03E;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='zapier']:hover::after { color:#FF4A00;}
+.socialsider.socialsider_bgwhite_dark.socialsider_colorize a[data-socialsider='zomato']:hover::after { color:#cb202d;}
+
+
+/* Color background, white font */
+.socialsider.socialsider_bgcolor_white a::after { color:#FFF;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='twitter']::after { background:#4da7de;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='facebook']::after { background:#3e5b98;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='google']::after { background:#d93e2d;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='pinterest']::after { background:#c92619;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='foursquare']::after { background:#23b7e0;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='yahoo']::after { background:#6E2A85;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='skype']::after { background:#28abe3;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='yelp']::after { background:#c83218;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='feedburner']::after { background:#FFCC00;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='linkedin']::after { background:#3371b7;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='viadeo']::after { background:#e4a000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='xing']::after { background:#005a60;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='myspace']::after { background:#323232;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='soundcloud']::after { background:#fe3801;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='spotify']::after { background:#7bb342;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='grooveshark']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='lastfm']::after { background:#d41316;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='youtube']::after { background:#e02a20;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='vimeo']::after { background:#51b5e7;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='dailymotion']::after { background:#004e72;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='vine']::after { background:#00b389;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='flickr']::after { background:#1e1e1b;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='500px']::after { background:#58a9de;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='instagram']::after { background:#9c7c6e;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='wordpress']::after { background:#464646;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='tumblr']::after { background:#45556c;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='blogger']::after { background:#ec661c;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='technorati']::after { background:#5cb030;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='reddit']::after { background:#e74a1e;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='dribbble']::after { background:#e84d88;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='stumbleupon']::after { background:#e64011;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='digg']::after { background:#1d1d1b;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='envato']::after { background:#597c3a;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='behance']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='delicious']::after { background:#020202;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='deviantart']::after { background:#c5d200;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='forrst']::after { background:#5B9A68;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='play']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='zerply']::after { background:#9DBC7A;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='wikipedia']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='apple']::after { background:#B9BFC1;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='flattr']::after { background:#F67C1A;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='github']::after { background:#5380c0;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='chimein']::after { background:#888688;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='friendfeed']::after { background:#2F72C4;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='newsvine']::after { background:#075B2F;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='identica']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='bebo']::after { background:#EF1011;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='zynga']::after { background:#DC0606;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='steam']::after { background:#8F8D8A;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='xbox']::after { background:#92C83E;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='windows']::after { background:#00BDF6;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='outlook']::after { background:#0072C6;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='coderwall']::after { background:#3E8DCC;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='tripadvisor']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='netcodes']::after { background:#2E3436;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='easid']::after { background:#1ABC9C;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='lanyrd']::after { background:#3c80c9;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='slideshare']::after { background:#4ba3a6;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='buffer']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='rss']::after { background: #f26109;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='vkontakte']::after { background:#5a7fa6;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='disqus']::after { background:#2e9fff;}
+
+/* v1.2*/
+.socialsider.socialsider_bgcolor_white a[data-socialsider='8tracks']::after { background:#122c4b;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='airbnb']::after { background:#ff5a5f;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='alliance']::after { background:#144587;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='amazon']::after { background:#ff9900;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='amplement']::after { background:#0996c3;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='android']::after { background:#8ec047;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='angellist']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='appnet']::after { background:#494949;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='baidu']::after { background:#2629d9;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='bandcamp']::after { background:#619aa9;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='battlenet']::after { background:#0096CD;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='bebee']::after { background:#f28f16;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='blizzard']::after { background:#01B2F1;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='chrome']::after { background:#757575;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='curse']::after { background:#f26522;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='deezer']::after { background:#32323d;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='diablo']::after { background:#8B1209;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='discord']::after { background:#7289da;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='douban']::after { background:#3ca353;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='draugiem']::after { background:#ffa32b;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='drupal']::after { background:#00598e;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='ebay']::after { background:#333333;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='ello']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='endomondo']::after { background:#86ad00;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='etsy']::after { background:#F56400;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='filmweb']::after { background:#ffc404;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='firefox']::after { background:#484848;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='formulr']::after { background:#ff5a60;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='goodreads']::after { background:#463020;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='googlescholar']::after { background:#4285f4;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='googlegroups']::after { background:#4F8EF5;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='googlephotos']::after { background:#212121;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='googleplus']::after { background:#dd4b39;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='hackerrank']::after { background:#2ec866;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='hearthstone']::after { background:#EC9313;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='hellocoton']::after { background:#d30d66;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='heroes']::after { background:#2397F7;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='hitbox']::after { background:#99CC00;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='horde']::after { background:#84121C;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='houzz']::after { background:#7CC04B;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='icq']::after { background:#7EBD00;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='imdb']::after { background:#E8BA00;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='issuu']::after { background:#F26F61;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='istock']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='itunes']::after { background:#ff5e51;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='keybase']::after { background:#FF7100;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='line']::after { background:#00B901;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='livejournal']::after { background:#0099CC;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='lyft']::after { background:#FF00BF;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='macos']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='mail']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='medium']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='meetup']::after { background:#e2373c;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='mixcloud']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='modelmayhem']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='mumble']::after { background:#5AB5D1;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='nintendo']::after { background:#F58A33;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='npm']::after { background:#C12127;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='odnoklassniki']::after { background:#f48420;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='openid']::after { background:#f78c40;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='opera']::after { background:#FF1B2D;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='overwatch']::after { background:#9E9E9E;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='patreon']::after { background:#E44727;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='paypal']::after { background:#009cde;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='periscope']::after { background:#3AA4C6;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='persona']::after { background:#e6753d;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='player']::after { background:#6E41BD;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='playstation']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='pocket']::after { background:#ED4055;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='qq']::after { background:#4297d3;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='quora']::after { background:#cb202d;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='raidcall']::after { background:#073558;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='ravelry']::after { background:#B6014C;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='renren']::after { background:#2266b0;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='researchgate']::after { background:#00CCBB;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='residentadvisor']::after { background:#B3BE1B;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='reverbnation']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='sharethis']::after { background:#01bf01;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='smugmug']::after { background:#ACFD32;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='snapchat']::after { background:#fffa37;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='songkick']::after { background:#F80046;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='stackexchange']::after { background:#2f2f2f;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='stackoverflow']::after { background:#FD9827;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='starcraft']::after { background:#002250;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='stayfriends']::after { background:#F08A1C;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='storehouse']::after { background:#25B0E6;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='strava']::after { background:#FC4C02;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='streamjar']::after { background:#503a60;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='swarm']::after { background:#FC9D3C;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='teamspeak']::after { background:#465674;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='teamviewer']::after { background:#168EF4;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='telegram']::after { background:#0088cc;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='tripit']::after { background:#1982C3;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='triplej']::after { background:#E53531;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='twitch']::after { background:#6441a5;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='uber']::after { background:#000000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='ventrilo']::after { background:#77808A;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='viber']::after { background:#7b519d;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='viewbug']::after { background:#2B9FCF;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='warcraft']::after { background:#1EB10A;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='wechat']::after { background:#09b507;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='weibo']::after { background:#e31c34;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='whatsapp']::after { background:#20B038;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='wykop']::after { background:#328efe;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='yammer']::after { background:#1175C4;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='yandex']::after { background:#FF0000;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='younow']::after { background:#61C03E;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='zapier']::after { background:#FF4A00;}
+.socialsider.socialsider_bgcolor_white a[data-socialsider='zomato']::after { background:#cb202d;}
+
+/* White background, color font */
+.socialsider.socialsider_bgwhite_color a::after { background:#FFF;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='twitter']::after { color:#4da7de;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='facebook']::after { color:#3e5b98;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='google']::after { color:#d93e2d;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='pinterest']::after { color:#c92619;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='foursquare']::after { color:#23b7e0;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='yahoo']::after { color:#6E2A85;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='skype']::after { color:#28abe3;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='yelp']::after { color:#c83218;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='feedburner']::after { color:#FFCC00;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='linkedin']::after { color:#3371b7;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='viadeo']::after { color:#e4a000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='xing']::after { color:#005a60;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='myspace']::after { color:#323232;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='soundcloud']::after { color:#fe3801;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='spotify']::after { color:#7bb342;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='grooveshark']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='lastfm']::after { color:#d41316;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='youtube']::after { color:#e02a20;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='vimeo']::after { color:#51b5e7;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='dailymotion']::after { color:#004e72;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='vine']::after { color:#00b389;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='flickr']::after { color:#1e1e1b;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='500px']::after { color:#58a9de;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='instagram']::after { color:#9c7c6e;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='wordpress']::after { color:#464646;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='tumblr']::after { color:#45556c;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='blogger']::after { color:#ec661c;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='technorati']::after { color:#5cb030;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='reddit']::after { color:#e74a1e;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='dribbble']::after { color:#e84d88;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='stumbleupon']::after { color:#e64011;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='digg']::after { color:#1d1d1b;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='envato']::after { color:#597c3a;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='behance']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='delicious']::after { color:#020202;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='deviantart']::after { color:#c5d200;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='forrst']::after { color:#5B9A68;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='play']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='zerply']::after { color:#9DBC7A;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='wikipedia']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='apple']::after { color:#B9BFC1;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='flattr']::after { color:#F67C1A;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='github']::after { color:#5380c0;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='chimein']::after { color:#888688;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='friendfeed']::after { color:#2F72C4;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='newsvine']::after { color:#075B2F;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='identica']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='bebo']::after { color:#EF1011;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='zynga']::after { color:#DC0606;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='steam']::after { color:#8F8D8A;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='xbox']::after { color:#92C83E;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='windows']::after { color:#00BDF6;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='outlook']::after { color:#0072C6;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='coderwall']::after { color:#3E8DCC;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='tripadvisor']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='netcodes']::after { color:#2E3436;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='easid']::after { color:#1ABC9C;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='lanyrd']::after { color:#3c80c9;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='slideshare']::after { color:#4ba3a6;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='buffer']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='rss']::after { color: #f26109;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='vkontakte']::after { color:#5a7fa6;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='disqus']::after { color:#2e9fff;}
+
+/* v1.2*/
+.socialsider.socialsider_bgwhite_color a[data-socialsider='8tracks']::after { color:#122c4b;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='airbnb']::after { color:#ff5a5f;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='alliance']::after { color:#144587;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='amazon']::after { color:#ff9900;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='amplement']::after { color:#0996c3;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='android']::after { color:#8ec047;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='angellist']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='appnet']::after { color:#494949;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='baidu']::after { color:#2629d9;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='bandcamp']::after { color:#619aa9;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='battlenet']::after { color:#0096CD;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='bebee']::after { color:#f28f16;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='blizzard']::after { color:#01B2F1;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='chrome']::after { color:#757575;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='curse']::after { color:#f26522;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='deezer']::after { color:#32323d;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='diablo']::after { color:#8B1209;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='discord']::after { color:#7289da;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='douban']::after { color:#3ca353;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='draugiem']::after { color:#ffa32b;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='drupal']::after { color:#00598e;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='ebay']::after { color:#333333;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='ello']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='endomondo']::after { color:#86ad00;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='etsy']::after { color:#F56400;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='filmweb']::after { color:#ffc404;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='firefox']::after { color:#484848;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='formulr']::after { color:#ff5a60;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='goodreads']::after { color:#463020;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='googlescholar']::after { color:#4285f4;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='googlegroups']::after { color:#4F8EF5;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='googlephotos']::after { color:#212121;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='googleplus']::after { color:#dd4b39;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='hackerrank']::after { color:#2ec866;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='hearthstone']::after { color:#EC9313;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='hellocoton']::after { color:#d30d66;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='heroes']::after { color:#2397F7;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='hitbox']::after { color:#99CC00;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='horde']::after { color:#84121C;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='houzz']::after { color:#7CC04B;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='icq']::after { color:#7EBD00;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='imdb']::after { color:#E8BA00;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='issuu']::after { color:#F26F61;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='istock']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='itunes']::after { color:#ff5e51;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='keybase']::after { color:#FF7100;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='line']::after { color:#00B901;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='livejournal']::after { color:#0099CC;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='lyft']::after { color:#FF00BF;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='macos']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='mail']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='medium']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='meetup']::after { color:#e2373c;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='mixcloud']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='modelmayhem']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='mumble']::after { color:#5AB5D1;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='nintendo']::after { color:#F58A33;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='npm']::after { color:#C12127;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='odnoklassniki']::after { color:#f48420;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='openid']::after { color:#f78c40;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='opera']::after { color:#FF1B2D;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='overwatch']::after { color:#9E9E9E;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='patreon']::after { color:#E44727;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='paypal']::after { color:#009cde;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='periscope']::after { color:#3AA4C6;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='persona']::after { color:#e6753d;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='player']::after { color:#6E41BD;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='playstation']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='pocket']::after { color:#ED4055;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='qq']::after { color:#4297d3;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='quora']::after { color:#cb202d;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='raidcall']::after { color:#073558;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='ravelry']::after { color:#B6014C;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='renren']::after { color:#2266b0;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='researchgate']::after { color:#00CCBB;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='residentadvisor']::after { color:#B3BE1B;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='reverbnation']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='sharethis']::after { color:#01bf01;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='smugmug']::after { color:#ACFD32;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='snapchat']::after { color:#fffa37;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='songkick']::after { color:#F80046;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='stackexchange']::after { color:#2f2f2f;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='stackoverflow']::after { color:#FD9827;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='starcraft']::after { color:#002250;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='stayfriends']::after { color:#F08A1C;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='storehouse']::after { color:#25B0E6;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='strava']::after { color:#FC4C02;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='streamjar']::after { color:#503a60;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='swarm']::after { color:#FC9D3C;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='teamspeak']::after { color:#465674;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='teamviewer']::after { color:#168EF4;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='telegram']::after { color:#0088cc;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='tripit']::after { color:#1982C3;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='triplej']::after { color:#E53531;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='twitch']::after { color:#6441a5;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='uber']::after { color:#000000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='ventrilo']::after { color:#77808A;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='viber']::after { color:#7b519d;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='viewbug']::after { color:#2B9FCF;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='warcraft']::after { color:#1EB10A;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='wechat']::after { color:#09b507;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='weibo']::after { color:#e31c34;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='whatsapp']::after { color:#20B038;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='wykop']::after { color:#328efe;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='yammer']::after { color:#1175C4;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='yandex']::after { color:#FF0000;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='younow']::after { color:#61C03E;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='zapier']::after { color:#FF4A00;}
+.socialsider.socialsider_bgwhite_color a[data-socialsider='zomato']::after { color:#cb202d;}
